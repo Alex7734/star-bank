@@ -1,23 +1,22 @@
 {
-  "name": "obytesapp",
-  "version": "5.2.0",
+  "name": "starbank",
+  "version": "1.0.0",
   "private": true,
   "main": "expo-router/entry",
   "scripts": {
     "start": "cross-env EXPO_NO_DOTENV=1 expo start",
-    "prebuild": "cross-env EXPO_NO_DOTENV=1 pnpm expo prebuild",
+    "prebuild": "cross-env EXPO_NO_DOTENV=1 yarn expo prebuild",
     "android": "cross-env EXPO_NO_DOTENV=1 expo run:android",
     "ios": "cross-env EXPO_NO_DOTENV=1 expo run:ios",
     "doctor": "npx expo-doctor@latest",
-    "preinstall": "npx only-allow pnpm",
-    "start:staging": "cross-env APP_ENV=staging pnpm run start",
-    "prebuild:staging": "cross-env APP_ENV=staging pnpm run prebuild",
-    "android:staging": "cross-env APP_ENV=staging pnpm run android",
-    "ios:staging": "cross-env APP_ENV=staging pnpm run ios",
-    "start:production": "cross-env APP_ENV=production pnpm run start",
-    "prebuild:production": "cross-env APP_ENV=production pnpm run prebuild",
-    "android:production": "cross-env APP_ENV=production pnpm run android",
-    "ios:production": "cross-env APP_ENV=production pnpm run ios",
+    "start:staging": "cross-env APP_ENV=staging yarn run start",
+    "prebuild:staging": "cross-env APP_ENV=staging yarn run prebuild",
+    "android:staging": "cross-env APP_ENV=staging yarn run android",
+    "ios:staging": "cross-env APP_ENV=staging yarn run ios",
+    "start:production": "cross-env APP_ENV=production yarn run start",
+    "prebuild:production": "cross-env APP_ENV=production yarn run prebuild",
+    "android:production": "cross-env APP_ENV=production yarn run android",
+    "ios:production": "cross-env APP_ENV=production yarn run ios",
     "build:development:ios": "cross-env APP_ENV=development EXPO_NO_DOTENV=1 eas build --profile development --platform ios",
     "build:development:android": "cross-env APP_ENV=development EXPO_NO_DOTENV=1 eas build --profile development --platform android ",
     "build:staging:ios": "cross-env APP_ENV=staging EXPO_NO_DOTENV=1 eas build --profile staging --platform ios",
@@ -26,15 +25,14 @@
     "build:production:android": "cross-env APP_ENV=production EXPO_NO_DOTENV=1 eas build --profile production --platform android ",
     "postinstall": "husky install",
     "app-release": "cross-env SKIP_BRANCH_PROTECTION=true np --no-publish --no-cleanup --no-release-draft",
-    "version": "pnpm run prebuild && git add .",
+    "version": "yarn run prebuild && git add .",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "type-check": "tsc  --noemit",
     "lint:translations": "eslint ./src/translations/ --fix --ext .json  ",
     "test": "jest",
-    "test:ci": "pnpm run test --coverage",
-    "test:watch": "pnpm run test --watch",
-    "install-maestro": "curl -Ls 'https://get.maestro.mobile.dev' | bash",
-    "e2e-test": "maestro test .maestro/ -e APP_ID=com.obytes.development"
+    "test:ci": "yarn run test --coverage",
+    "test:watch": "yarn run test --watch",
+    "install-maestro": "curl -Ls 'https://get.maestro.mobile.dev' | bash"
   },
   "dependencies": {
     "@expo/metro-runtime": "^3.1.3",
@@ -124,10 +122,5 @@
     "tailwindcss": "^3.3.2",
     "ts-jest": "^29.1.1",
     "typescript": "^5.3.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/obytes/react-native-template-obytes.git"
-  },
-  "packageManager": "pnpm@8.6.5"
+  }
 }

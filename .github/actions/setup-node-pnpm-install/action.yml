@@ -11,19 +11,19 @@
 #       - name : 📦 Setup Node + PNPM + install deps
 #         uses: ./.github/actions/setup-node-pnpm-install
 
-name: 'Setup  Node + PNPM + Install Dependencies'
-description: 'Setup  Node + PNPM + Install Dependencies'
+name: 'Setup  Node + Yarn + Install Dependencies'
+description: 'Setup  Node + Yarn + Install Dependencies'
 runs:
   using: 'composite'
   steps:
-    - uses: pnpm/action-setup@v2
+    - uses: yargs/actions/setup-node@v2
       with:
         version: 8
-    - uses: actions/setup-node@v3
+    - uses: yargs/actions/setup-yarn@v2
       with:
         node-version: 18
-        cache: 'pnpm'
+        cache: 'yarn'
 
     - name: 📦 Install Project Dependencies
-      run: pnpm install --frozen-lockfile
+      run: yarn install --frozen-lockfile
       shell: bash
