@@ -57,9 +57,9 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
 
-      - name: 📦 Setup Node + PNPM + install deps
+      - name: 📦 Setup Node + Yarn + install deps
         uses: ./.github/actions/setup-node-yarn-install
 
       - name: 🏃‍♂️ Run App release
         run: |
-          pnpm app-release ${{ github.event.inputs.release-type }}
+          yarn app-release ${{ github.event.inputs.release-type }}
