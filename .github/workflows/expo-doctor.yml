@@ -35,7 +35,7 @@ jobs:
           fetch-depth: 0
 
       - name: 📦 Setup Node + PNPM + install deps
-        uses: ./.github/actions/setup-node-pnpm-install
+        uses: ./.github/actions/setup-node-yarn-install
 
       - name: Run prebuild
         run: pnpm run prebuild ## we only need to run this to generate the badged icon in `.expo` folder

@@ -29,7 +29,7 @@ jobs:
           fetch-depth: 0
 
       - name: 📦 Setup Node + PNPM + install deps
-        uses: ./.github/actions/setup-node-pnpm-install
+        uses: ./.github/actions/setup-node-yarn-install
 
       - name: 📦 Install Reviewdog
         if: github.event_name == 'pull_request'
